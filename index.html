@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!-- Firebase SDK -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.17.2/firebase-database.js"></script> -->
+
+    <title>ToDo List</title>
+</head>
+<body>
+    <div class="list-container">
+        <h1>Todo List</h1>
+        
+        <button class="new-item-btn" onclick="displayNewItemDialogue()" >+Add new Item</button>
+
+        <div id="form-section">
+        <div class="form-container" id="form-container">
+        <form class="todo-form" id="todo-form" onsubmit="submitForm(event)">
+          <p class="add-item-heading">Add new Item</p>
+          <input type="text" id="todo-input" placeholder="Add on list..." />
+          <div class="dueDateField">
+          <label for="dueDateInput" style="font-weight: bold;">Due Date:</label>
+          <input type="date" id="dueDateInput">
+          </div>
+          <!-- <input type="file" id="fileInput"> -->
+          <div class="btn-container">
+          <button type="submit" class="addButton">Add</button>
+          <button type="button" id="close" class="addButton" onclick="closeTodo()">Close</button>
+          </div>
+        </form>
+        </div>
+        </div>
+
+        <!-- Update values -->
+        <div id="update-section">
+        <div id="update-form-container" class="update-form-container">
+          <form class="todo-form" onsubmit="updateItem(event)">
+          <p class="add-item-heading">Edit Task</p>
+          <input type="text" id="update-input">
+          <div class="dueDateField">
+          <label for="update-dueDate"><b>Due Date:</b></label>
+          <input type="text" id="update-dueDate">
+          </div>
+          <!-- <label for="update-fileInput">File:</label>
+          <input type="file" id="update-fileInput"> -->
+          <div class="btn-container">
+          <button type="submit" class="addButton">Update</button>
+          <button type="button" onclick="closeUpdateDialog()" class="addButton">Close</button>
+          </div>
+          </form>
+        </div>
+        </div>
+
+        <hr>
+        <h3 class="task-heading">My Tasks</h3>
+        <ul id="todo-list"> </ul>
+      </div>
+
+      
+        
+      <script type="module" src="index.js"></script>
+      <script src="functions.js"></script>
+    </body>
+</html>
